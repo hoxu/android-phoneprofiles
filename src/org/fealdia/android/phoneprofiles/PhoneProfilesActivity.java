@@ -17,16 +17,16 @@ import android.widget.Toast;
 
 public class PhoneProfilesActivity extends ListActivity {
 	private int MAIN_NOTIFICATION_ID = 1;
-	private String currentProfile = null;
+	private ProfileManager profileManager = null;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		profileManager = new ProfileManager();
 		showNotification();
 
-		String[] PROFILES = { "General", "Meeting", "Night", "Silent" };
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.main, PROFILES));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.main, profileManager.getProfiles()));
 
 		ListView lv = getListView();
 		lv.setTextFilterEnabled(true);
@@ -36,7 +36,7 @@ public class PhoneProfilesActivity extends ListActivity {
 				// When clicked, show a toast with the TextView text
 				CharSequence choice = ((TextView) view).getText();
 				Toast.makeText(getApplicationContext(), choice, Toast.LENGTH_SHORT).show();
-				currentProfile = choice.toString();
+				profileManager.changeProfile(choice.toString());
 				showNotification();
 			}
 		});
@@ -51,7 +51,7 @@ public class PhoneProfilesActivity extends ListActivity {
 		long when = System.currentTimeMillis(); // notification time
 		Context context = getApplicationContext(); // application Context
 		CharSequence contentTitle = "Phone Profiles"; // message title
-		CharSequence contentText = "Active profile: " + currentProfile; // message text
+		CharSequence contentText = "Active profile: " + profileManager.getCurrentProfile(); // message text
 
 		Intent notificationIntent = new Intent(this, PhoneProfilesActivity.class);
 		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
