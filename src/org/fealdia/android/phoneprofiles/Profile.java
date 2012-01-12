@@ -6,13 +6,15 @@ public class Profile {
 	private String name;
 	private int ringerMode = AudioManager.RINGER_MODE_NORMAL;
 	private int vibrateSetting = AudioManager.VIBRATE_SETTING_ON;
+	private int ringerVolume = 0; // 0-100
 
 	public Profile() {}
 
-	public Profile(String name, int ringerMode, int vibrateSetting) {
+	public Profile(String name, int ringerMode, int vibrateSetting, int ringerVolume) {
 		this.name = name;
 		this.ringerMode = ringerMode;
 		this.vibrateSetting = vibrateSetting;
+		this.ringerVolume = ringerVolume;
 	}
 
 	public String getName() {
@@ -37,5 +39,13 @@ public class Profile {
 
 	public void setVibrateSetting(int vibrateSetting) {
 		this.vibrateSetting = vibrateSetting;
+	}
+
+	public int getRingerVolume() {
+		return ringerVolume;
+	}
+
+	public void setRingerVolume(int ringerVolume) {
+		this.ringerVolume = ringerVolume;
 	}
 }

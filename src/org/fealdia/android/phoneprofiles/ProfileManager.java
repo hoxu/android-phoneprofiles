@@ -10,10 +10,10 @@ public class ProfileManager {
 	private List<Profile> profiles = new LinkedList<Profile>();
 
 	public ProfileManager() {
-		profiles.add(new Profile("General", AudioManager.RINGER_MODE_NORMAL, AudioManager.VIBRATE_SETTING_ON));
-		profiles.add(new Profile("Meeting", AudioManager.RINGER_MODE_VIBRATE, AudioManager.VIBRATE_SETTING_ON));
-		profiles.add(new Profile("Night", AudioManager.RINGER_MODE_NORMAL, AudioManager.VIBRATE_SETTING_OFF));
-		profiles.add(new Profile("Silent", AudioManager.RINGER_MODE_SILENT, AudioManager.VIBRATE_SETTING_OFF));
+		profiles.add(new Profile("General", AudioManager.RINGER_MODE_NORMAL, AudioManager.VIBRATE_SETTING_ON, 100));
+		profiles.add(new Profile("Meeting", AudioManager.RINGER_MODE_VIBRATE, AudioManager.VIBRATE_SETTING_ON, 0));
+		profiles.add(new Profile("Night", AudioManager.RINGER_MODE_NORMAL, AudioManager.VIBRATE_SETTING_OFF, 20));
+		profiles.add(new Profile("Silent", AudioManager.RINGER_MODE_SILENT, AudioManager.VIBRATE_SETTING_OFF, 0));
 	}
 
 	public void changeProfile(String profile) {
