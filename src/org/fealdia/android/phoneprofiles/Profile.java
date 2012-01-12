@@ -7,14 +7,16 @@ public class Profile {
 	private int ringerMode = AudioManager.RINGER_MODE_NORMAL;
 	private int vibrateSetting = AudioManager.VIBRATE_SETTING_ON;
 	private int ringerVolume = 0; // 0-100
+	private boolean muteNotifications = false;
 
 	public Profile() {}
 
-	public Profile(String name, int ringerMode, int vibrateSetting, int ringerVolume) {
+	public Profile(String name, int ringerMode, int vibrateSetting, int ringerVolume, boolean muteNotifications) {
 		this.name = name;
 		this.ringerMode = ringerMode;
 		this.vibrateSetting = vibrateSetting;
 		this.ringerVolume = ringerVolume;
+		this.muteNotifications = muteNotifications;
 	}
 
 	public String getName() {
@@ -47,5 +49,13 @@ public class Profile {
 
 	public void setRingerVolume(int ringerVolume) {
 		this.ringerVolume = ringerVolume;
+	}
+
+	public boolean isMuteNotifications() {
+		return muteNotifications;
+	}
+
+	public void setMuteNotifications(boolean muteNotifications) {
+		this.muteNotifications = muteNotifications;
 	}
 }
