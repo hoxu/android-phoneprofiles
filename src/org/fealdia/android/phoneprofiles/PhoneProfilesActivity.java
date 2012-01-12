@@ -26,7 +26,7 @@ public class PhoneProfilesActivity extends ListActivity {
 		profileManager = new ProfileManager();
 		showNotification();
 
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.main, profileManager.getProfiles()));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.main, profileManager.getProfileNames()));
 
 		ListView lv = getListView();
 		lv.setTextFilterEnabled(true);
@@ -45,7 +45,6 @@ public class PhoneProfilesActivity extends ListActivity {
 	private void showNotification() {
 		NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-		// int icon = R.drawable.notification_icon; // icon from resources
 		int icon = R.drawable.ic_launcher;
 		CharSequence tickerText = "Hello"; // ticker-text
 		long when = System.currentTimeMillis(); // notification time
