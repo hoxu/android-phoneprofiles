@@ -50,6 +50,7 @@ public class PhoneProfilesActivity extends ListActivity {
 		// Change system settings based on profile values
 		AudioManager am = getAudioManager();
 		am.setRingerMode(profile.getRingerMode());
+		am.setVibrateSetting(AudioManager.VIBRATE_TYPE_RINGER, profile.getVibrateSetting());
 	}
 
 	private AudioManager getAudioManager() {
