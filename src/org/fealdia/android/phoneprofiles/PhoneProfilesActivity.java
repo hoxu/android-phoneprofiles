@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,10 +37,23 @@ public class PhoneProfilesActivity extends ListActivity {
 				// When clicked, show a toast with the TextView text
 				CharSequence choice = ((TextView) view).getText();
 				Toast.makeText(getApplicationContext(), choice, Toast.LENGTH_SHORT).show();
-				profileManager.changeProfile(choice.toString());
+				changeProfile(choice.toString());
 				showNotification();
 			}
 		});
+	}
+
+	private void changeProfile(String name) {
+		profileManager.changeProfile(name);
+		Profile profile = profileManager.getCurrentProfile();
+
+		// Change system settings based on profile values
+		AudioManager am = getAudioManager();
+		am.setRingerMode(profile.getRingerMode());
+	}
+
+	private AudioManager getAudioManager() {
+		return (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 	}
 
 	private void showNotification() {
@@ -50,7 +64,7 @@ public class PhoneProfilesActivity extends ListActivity {
 		long when = System.currentTimeMillis(); // notification time
 		Context context = getApplicationContext(); // application Context
 		CharSequence contentTitle = "Phone Profiles"; // message title
-		CharSequence contentText = "Active profile: " + profileManager.getCurrentProfile(); // message text
+		CharSequence contentText = "Active profile: " + profileManager.getCurrentProfileName(); // message text
 
 		Intent notificationIntent = new Intent(this, PhoneProfilesActivity.class);
 		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
