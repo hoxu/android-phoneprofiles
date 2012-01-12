@@ -25,6 +25,9 @@ public class ProfileManager {
 	}
 
 	public String getCurrentProfileName() {
+		if (currentProfile == null) {
+			return null;
+		}
 		return currentProfile.getName();
 	}
 
