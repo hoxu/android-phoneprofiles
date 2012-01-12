@@ -62,7 +62,7 @@ public class PhoneProfilesActivity extends ListActivity {
 	private void showNotification() {
 		NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-		int icon = R.drawable.ic_launcher;
+		int icon = android.R.drawable.star_on;
 		CharSequence tickerText = "Hello"; // ticker-text
 		long when = System.currentTimeMillis(); // notification time
 		Context context = getApplicationContext(); // application Context
