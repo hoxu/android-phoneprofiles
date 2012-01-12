@@ -25,8 +25,8 @@ public class PhoneProfilesActivity extends Activity {
 		CharSequence tickerText = "Hello"; // ticker-text
 		long when = System.currentTimeMillis(); // notification time
 		Context context = getApplicationContext(); // application Context
-		CharSequence contentTitle = "My notification"; // message title
-		CharSequence contentText = "Hello World!"; // message text
+		CharSequence contentTitle = "Phone Profiles"; // message title
+		CharSequence contentText = "Active profile: ..."; // message text
 
 		Intent notificationIntent = new Intent(this, PhoneProfilesActivity.class);
 		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
