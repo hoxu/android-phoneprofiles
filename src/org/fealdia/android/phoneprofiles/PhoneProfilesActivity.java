@@ -53,6 +53,8 @@ public class PhoneProfilesActivity extends ListActivity {
 		am.setVibrateSetting(AudioManager.VIBRATE_TYPE_RINGER, profile.getVibrateSetting());
 		System.out.println("StreamMaxVolume: " + am.getStreamMaxVolume(AudioManager.STREAM_RING));
 		am.setStreamVolume(AudioManager.STREAM_RING, (profile.getRingerVolume() * am.getStreamMaxVolume(AudioManager.STREAM_RING)) / 100, 0);
+
+		finish();
 	}
 
 	private AudioManager getAudioManager() {
