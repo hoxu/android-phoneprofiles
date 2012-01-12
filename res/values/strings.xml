@@ -3,5 +3,8 @@
 
     <string name="hello">Hello World, PhoneProfilesActivity!</string>
     <string name="app_name">Phone Profiles</string>
+    <string name="add_profile">Add profile</string>
+    <string name="options">Options</string>
+    <string name="about">About</string>
 
 </resources>

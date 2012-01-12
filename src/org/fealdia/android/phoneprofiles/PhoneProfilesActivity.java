@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -59,6 +61,13 @@ public class PhoneProfilesActivity extends ListActivity {
 
 	private AudioManager getAudioManager() {
 		return (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main, menu);
+		return true;
 	}
 
 	private void showNotification() {
