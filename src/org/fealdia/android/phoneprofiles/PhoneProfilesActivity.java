@@ -91,7 +91,7 @@ public class PhoneProfilesActivity extends ListActivity {
 		if (profile.getIcon() != 0) {
 			icon = profile.getIcon();
 		}
-		CharSequence tickerText = "Hello"; // ticker-text
+		CharSequence tickerText = "Phone Profiles"; // ticker-text
 		long when = System.currentTimeMillis(); // notification time
 		Context context = getApplicationContext(); // application Context
 		CharSequence contentTitle = "Phone Profiles"; // message title
