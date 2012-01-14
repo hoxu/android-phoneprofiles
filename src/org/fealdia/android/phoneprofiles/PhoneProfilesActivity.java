@@ -27,7 +27,6 @@ public class PhoneProfilesActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		profileManager = new ProfileManager();
-		showNotification();
 
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.main, profileManager.getProfileNames()));
 
@@ -72,14 +71,19 @@ public class PhoneProfilesActivity extends ListActivity {
 	}
 
 	private void showNotification() {
+		Profile profile = profileManager.getCurrentProfile();
+		
 		NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
 		int icon = android.R.drawable.star_on;
+		if (profile.getIcon() != 0) {
+			icon = profile.getIcon();
+		}
 		CharSequence tickerText = "Hello"; // ticker-text
 		long when = System.currentTimeMillis(); // notification time
 		Context context = getApplicationContext(); // application Context
 		CharSequence contentTitle = "Phone Profiles"; // message title
-		CharSequence contentText = "Active profile: " + profileManager.getCurrentProfileName(); // message text
+		CharSequence contentText = "Active profile: " + profile.getName(); // message text
 
 		Intent notificationIntent = new Intent(this, PhoneProfilesActivity.class);
 		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);

@@ -8,15 +8,17 @@ public class Profile {
 	private int vibrateSetting = AudioManager.VIBRATE_SETTING_ON;
 	private int ringerVolume = 0; // 0-100
 	private boolean muteNotifications = false;
+	private int icon = 0;
 
 	public Profile() {}
 
-	public Profile(String name, int ringerMode, int vibrateSetting, int ringerVolume, boolean muteNotifications) {
+	public Profile(String name, int ringerMode, int vibrateSetting, int ringerVolume, boolean muteNotifications, int icon) {
 		this.name = name;
 		this.ringerMode = ringerMode;
 		this.vibrateSetting = vibrateSetting;
 		this.ringerVolume = ringerVolume;
 		this.muteNotifications = muteNotifications;
+		this.icon = icon;
 	}
 
 	public String getName() {
@@ -57,5 +59,13 @@ public class Profile {
 
 	public void setMuteNotifications(boolean muteNotifications) {
 		this.muteNotifications = muteNotifications;
+	}
+
+	public int getIcon() {
+		return icon;
+	}
+
+	public void setIcon(int icon) {
+		this.icon = icon;
 	}
 }
