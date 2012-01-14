@@ -16,6 +16,12 @@ public class ProfileManager {
 		profiles.add(new Profile("Silent", AudioManager.RINGER_MODE_SILENT, AudioManager.VIBRATE_SETTING_OFF, 0, true, 0));
 	}
 
+	public void addNewProfile() {
+		Profile profile = new Profile();
+		profile.setName("New profile");
+		profiles.add(profile);
+	}
+
 	public void changeProfile(String profile) {
 		this.currentProfile = getProfile(profile);
 	}
