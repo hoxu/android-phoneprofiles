@@ -10,10 +10,10 @@ public class ProfileManager {
 	private List<Profile> profiles = new LinkedList<Profile>();
 
 	public ProfileManager() {
-		profiles.add(new Profile("General", AudioManager.RINGER_MODE_NORMAL, AudioManager.VIBRATE_SETTING_ON, 100, false, 0));
-		profiles.add(new Profile("Meeting", AudioManager.RINGER_MODE_VIBRATE, AudioManager.VIBRATE_SETTING_ON, 0, false, 0));
+		profiles.add(new Profile("General", AudioManager.RINGER_MODE_NORMAL, AudioManager.VIBRATE_SETTING_ON, 100, false, android.R.drawable.ic_menu_agenda));
+		profiles.add(new Profile("Meeting", AudioManager.RINGER_MODE_VIBRATE, AudioManager.VIBRATE_SETTING_ON, 0, false, android.R.drawable.ic_menu_today));
 		profiles.add(new Profile("Night", AudioManager.RINGER_MODE_NORMAL, AudioManager.VIBRATE_SETTING_OFF, 20, true, R.drawable.ic_stat_night));
-		profiles.add(new Profile("Silent", AudioManager.RINGER_MODE_SILENT, AudioManager.VIBRATE_SETTING_OFF, 0, true, 0));
+		profiles.add(new Profile("Silent", AudioManager.RINGER_MODE_SILENT, AudioManager.VIBRATE_SETTING_OFF, 0, true, android.R.drawable.ic_lock_silent_mode));
 	}
 
 	public void addNewProfile() {
