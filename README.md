@@ -17,4 +17,4 @@ License
 
 Phone Profiles is licensed under GNU General Public License v3.0 (GPLv3).
 
-See [](https://www.gnu.org/licenses/gpl-3.0.txt)
+See https://www.gnu.org/licenses/gpl-3.0.txt
