@@ -1,0 +1,12 @@
+- FIXME: night sms mode does not work
+- widget
+- autostart on boot
+- addition of custom profiles (& persistence of those)
+- long press to delete profile
+- menu
+	- add profile
+	- options
+- timed profiles (activate for 1 hour etc)
+	- long press to activate
+- phone call whitelists (allow at night only some)
+- automatically put to meeting profile when calendar event is active (optional)
